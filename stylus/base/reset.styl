@@ -1,0 +1,156 @@
+*
+  padding 0
+  margin 0
+  box-sizing border-box
+
+:root
+  --container-padding: 16px
+  --slider-gap: 20px
+  --header-height: 80px
+
+  +mq(768)
+    --container-padding: 48px
+  +mq(992)
+    --container-padding: 80px
+
+// Admin styles
+.shopify-design-mode
+  [data-aos^=fade]
+    &,
+    [data-aos^=fade]
+      opacity 1
+      transform translateZ(0)
+
+
+[data-aos^=fade]
+  &,
+  [data-aos^=fade]
+    transform translate3d(0, 10px, 0)
+
+
+body,
+html
+  height 100%
+  margin 0
+  padding 0
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  -webkit-font-smoothing antialiased
+  -webkit-text-size-adjust 100%
+  -ms-text-size-adjust 100%
+  font-body()
+
+
+body[class*="overflow-hidden"]
+  overflow hidden
+
+
+[v-cloak]
+  display none
+
+.sr-only,
+.visually-hidden
+  position absolute !important
+  overflow hidden
+  width 1px
+  height 1px
+  margin -1px
+  padding 0
+  border 0
+  clip rect(0 0 0 0)
+  word-wrap normal !important
+
+a
+  color inherit
+  text-decoration none
+  cursor pointer
+
+img
+  display block
+  height auto
+  max-width 100%
+  margin 0
+
+
+.container
+  width 100%
+  max-width 2000px
+  margin 0 auto
+  padding 0 var(--container-padding)
+  position relative
+
+
+.container--small
+  max-width 1200px
+
+
+.container--narrow
+  --container-padding: 16px
+  max-width none
+
+  +mq(768)
+    --container-padding: 24px
+
+
+// Sections colors
+.section--color-scheme-1
+.section--color-scheme-2
+  --bg-color $white
+  --text-color $black
+
+.section--color-scheme-3
+  --bg-color $black_bg
+  --overlay-color black
+  --text-color $white
+
+.section--color-scheme-4
+  --bg-color $blue
+  --text-color $white
+
+
+
+// Default style for slider arrows
+.swiper-button
+  background-color $yellow
+  width 34px
+  height @width
+  padding 5px
+  border-radius 50%
+
+  +mq(768)
+    width 44px
+    height @width
+    padding 10px
+
+  &:after
+    color $black
+    font-size 16px
+
+// Transitions
+.fade-enter-active,
+.fade-leave-active
+  transition opacity 0.25s ease
+
+.fade-enter-from,
+.fade-leave-to
+  opacity 0
+
+
+.slide-enter-active
+  transition translate 0.15s ease
+
+.slide-leave-active
+  transition translate 0.25s ease
+
+.slide-enter-from,
+.slide-leave-to
+  translate 0 -20px
+
+// Whatsapp button
+.whatsapp-button
+  width 48px
+  height 48px
+  position fixed
+  bottom 50px
+  right 15px
+  z-index 10000

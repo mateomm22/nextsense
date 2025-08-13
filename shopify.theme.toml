@@ -1,0 +1,3 @@
+[environments.main]
+store = "nextsense-smartbuds.myshopify.com"
+path  = "./theme/"

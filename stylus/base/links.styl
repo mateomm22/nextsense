@@ -1,0 +1,92 @@
+.cta
+  --bg-color: $black
+  --text-color: $white
+  display inline-flex
+  align-items center
+  justify-content center
+  background-color var(--bg-color)
+  padding 11px 32px
+  border 0
+  border-radius 0
+  transition background 0.2s ease-in-out
+  cursor pointer
+
+  &:hover
+    --bg-color: $blue
+
+  span
+    display block
+    color var(--text-color)
+    font-size 15px
+    transition color 0.2s ease-in-out
+    cursor inherit
+    font-body(600)
+
+
+.cta--outline
+  --bg-color: transparent
+  --text-color: $black
+  border 1px solid rgba($black, 0.3)
+
+  &:hover
+    --bg-color: $white
+    border-color white
+
+
+.cta--white
+  --bg-color: $white
+  --text-color: $black
+  border 0
+
+  &:hover
+    --bg-color: $black
+    --text-color: $white
+
+
+.cta--blue
+  --bg-color: $blue
+  --text-color: $white
+  border 0
+
+  &:hover
+    --bg-color: $black
+    --text-color: $white
+
+    span
+      color $white
+
+
+
+
+.cta--clear
+  --bg-color:  rgba($white, 0.4)
+  --text-color: $white
+  border 1px solid rgba($white, 0.3)
+
+
+  &:hover
+    --bg-color: $white
+    --text-color: $black
+
+
+
+.link
+  display inline-flex
+  align-items center
+  color $blue
+  text-transform uppercase
+  text-decoration underline
+  cursor pointer
+  font-size clamp(14px, 2vw, 16px)
+  font('headline', 400)
+
+  &:hover
+    text-decoration
+
+
+.link--black
+  color $black
+
+
+.link--white
+  color $white

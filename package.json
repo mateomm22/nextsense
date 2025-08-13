@@ -1,0 +1,26 @@
+{
+  "name": "nextsense",
+  "version": "1.0.0",
+  "node": ">=20",
+  "main": "index.js",
+  "repository": "git@github.com:Contra-Studio/nextsense.git",
+  "author": "Contra",
+  "license": "MIT",
+  "scripts": {
+    "watch:stylus": "stylus -w ./stylus/_main.styl -o ./theme/assets/custom.min.css -c",
+    "watch:stylusCustomer": "stylus -w ./stylus/customer.styl -o ./theme/assets/customer-custom.min.css -c",
+    "watch:babel": "babel ./scripts --watch --ignore ./scripts/sections/cart.js --out-file ./theme/assets/custom.min.js",
+    "dev": "concurrently --kill-others \"npm run watch:stylus\"  \"npm run watch:stylusCustomer\" \"npm run watch:babel\"",
+    "t:dev": "shopify theme dev --environment main",
+    "t:pull": "shopify theme pull --environment main",
+    "t:push": "shopify theme push -x templates/ --environment main"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "babel-preset-minify": "^0.5.2",
+    "concurrently": "^8.0.1",
+    "stylus": "^0.59.0"
+  }
+}
