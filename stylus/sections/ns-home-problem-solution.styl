@@ -1,0 +1,62 @@
+.home-problem-solution
+  background linear-gradient(to bottom, var(--bg-1) var(--bg-1-pos),  var(--bg-2) var(--bg-2-pos))
+
+  .section
+    top 0
+    display grid
+    height auto
+    place-items center
+    text-align center
+    color var(--text)
+
+    .title
+      margin-bottom 0.5em
+      font-serif()
+
+    .text
+      max-width 500px
+      margin: 0 auto
+
+
+  .section--1
+    position: sticky
+    height 100lvh
+
+
+  .section--2
+    .title
+      position relative
+
+    .text
+      margin-bottom 2em
+
+    .earbud
+      position absolute
+      width 115px
+
+    .earbud--l
+      bottom 40%
+      left 40%
+
+    .earbud--r
+      z-index -1
+      top 60%
+      left 55%
+
+    .text--xl
+      margin-bottom 1em
+
+
+  .section--carousel
+    padding 150px 0
+    position relative
+
+  .carousel
+    white-space nowrap
+
+    .card
+      background-color $white
+      width 200px
+      aspect-ratio 1 / 2
+      display inline-block
+

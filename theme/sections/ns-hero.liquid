@@ -1,0 +1,138 @@
+<div class="hero__home js-hero-scroll">
+  {% if section.settings.bg_image %}
+    <picture class="hero-home__bg js-hand">
+      <!-- WebP source for modern browsers -->
+      <source
+        srcset="
+          {{ section.settings.bg_image | image_url: width: 480, format: 'webp' }} 480w,
+          {{ section.settings.bg_image | image_url: width: 768, format: 'webp' }} 768w,
+          {{ section.settings.bg_image | image_url: width: 1024, format: 'webp' }} 1024w,
+          {{ section.settings.bg_image | image_url: width: 1600, format: 'webp' }} 1600w
+        "
+        sizes="100vw"
+        type="image/webp"
+      >
+
+      <!-- Fallback source for browsers that don't support WebP -->
+      <source
+        srcset="
+          {{ section.settings.bg_image | image_url: width: 480 }} 480w,
+          {{ section.settings.bg_image | image_url: width: 768 }} 768w,
+          {{ section.settings.bg_image | image_url: width: 1024 }} 1024w,
+          {{ section.settings.bg_image | image_url: width: 1600 }} 1600w
+        "
+        sizes="100vw"
+        type="image/jpeg"
+      >
+
+      <!-- Fallback <img> tag -->
+      <img
+        src="{{ section.settings.bg_image | image_url: width: 1024 }}"
+        alt="{{ section.settings.bg_image.alt | escape }}"
+        decoding="async"
+      >
+    </picture>
+  {% endif %}
+
+  <div class="container">
+    <div class="hero-home__content">
+      <div class="headline">
+        <h1 class="title title--lg">
+          {{ section.settings.headline_1 }}
+          <span>
+            {{ section.settings.headline_2 }}
+          </span>
+        </h1>
+
+      {% if section.settings.image_1 %}
+        {{ section.settings.image_1 | image_url: width: 200 | image_tag: class: 'earbud earbud--1 js-earbud-1'}}
+      {% endif %}
+
+      {% if section.settings.image_2 %}
+        {{ section.settings.image_2 | image_url: width: 200 | image_tag: class: 'earbud earbud--2 js-earbud-2'}}
+      {% endif %}
+      </div>
+
+      <div class="text text--lg">
+        {{ section.settings.description }}
+      </div>
+
+      <a href="" class="btn">
+        <span class="btn__text">
+          Order now
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "headline_1",
+      "label": "Headline 1"
+    },
+    {
+      "type": "text",
+      "id": "headline_2",
+      "label": "Headline 2"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "t:content.media"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "header",
+      "content": "t:content.section_link"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_in_new_tab",
+      "label": "t:settings.open_new_tab",
+      "default": false
+    },
+  ],
+  "presets": [
+    {
+      "name": "Hero",
+      "category": "Banners",
+    }
+  ]
+}
+{% endschema %}

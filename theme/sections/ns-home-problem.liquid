@@ -1,0 +1,126 @@
+<div class="home-problem-solution js-home-problem-solution" style="--text: var(--white)">
+  <div class="section section--1">
+    <div class="container">
+      <h2 class="title title--xl">
+        {{ section.settings.headline_1 }}
+      </h2>
+
+      <div class="text text--lg">
+        <p>
+          Constant exhaustion chips away at who we are. It dulls our focus, flattens our mood, and disconnects us from our lives.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section--2">
+    <div class="container">
+      <h2 class="title title--xl">
+        <img src="{{ 'earbud-l.webp' | asset_url }}" class="earbud earbud--l" alt="">
+        {{ section.settings.headline_2 }}
+        <img src="{{ 'earbud-r.webp' | asset_url }}" class="earbud earbud--r" alt="">
+      </h2>
+
+      <div class="text text--xl">
+        <p>
+          The first truly wireless earbuds designed to restore energy–not just measure it.
+        </p>
+      </div>
+
+      <div class="text">
+        <p>
+          Smartbuds respond to your brain’s rhythm in real time, supporting deeper rest, clearer focus, and a more present state of mind.
+        </p>
+      </div>
+
+      <a href="" class="btn btn--clear">
+        <span class="btn__text">
+          Order Now
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section section--carousel">
+    <div class="container">
+      <div class="carousel">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Problem-Solution",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "headline_1",
+      "label": "Headline 1"
+    },
+    {
+      "type": "text",
+      "id": "headline_2",
+      "label": "Headline 2"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "t:content.media"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "header",
+      "content": "t:content.section_link"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_in_new_tab",
+      "label": "t:settings.open_new_tab",
+      "default": false
+    },
+  ],
+  "presets": [
+    {
+      "name": "Problem-Solution",
+      "category": "Banners",
+    }
+  ]
+}
+{% endschema %}
