@@ -63,19 +63,16 @@
 
     {% render 'search-modal' %}
 
-    {% if settings.quick_add or settings.mobile_quick_add %}
-      {% render 'quick-add-modal' %}
-    {% endif %}
-
-    {% comment %} Custom JS {% endcomment %}
-
     <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
     <script
       src="{{ 'custom.min.js' | asset_url }}"
-      type="module"
-      defer
       async
+      blocking="render"
     ></script>
+
+    {% if settings.quick_add or settings.mobile_quick_add %}
+      {% render 'quick-add-modal' %}
+    {% endif %}
   </body>
 </html>

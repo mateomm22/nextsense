@@ -45,7 +45,7 @@ const problemTl = [
 	[homeProblemWrapperSection1, {
 		y: -50
 	}, {
-			at: "<"
+			delay: 1.5
 		}],
 	[homeProblemWrapperSection1, {
 		"filter": ["blur(0)", "blur(10px)"],

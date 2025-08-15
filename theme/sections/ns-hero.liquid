@@ -13,18 +13,6 @@
         type="image/webp"
       >
 
-      <!-- Fallback source for browsers that don't support WebP -->
-      <source
-        srcset="
-          {{ section.settings.bg_image | image_url: width: 480 }} 480w,
-          {{ section.settings.bg_image | image_url: width: 768 }} 768w,
-          {{ section.settings.bg_image | image_url: width: 1024 }} 1024w,
-          {{ section.settings.bg_image | image_url: width: 1600 }} 1600w
-        "
-        sizes="100vw"
-        type="image/jpeg"
-      >
-
       <!-- Fallback <img> tag -->
       <img
         src="{{ section.settings.bg_image | image_url: width: 1024 }}"
