@@ -4,14 +4,7 @@
   box-sizing border-box
 
 :root
-  --container-padding: 16px
-  --slider-gap: 20px
-  --header-height: 80px
-
-  +mq(768)
-    --container-padding: 48px
-  +mq(992)
-    --container-padding: 80px
+  interpolate-size allow-keywords
 
 // Admin styles
 .shopify-design-mode
@@ -38,7 +31,7 @@ html
   -webkit-font-smoothing antialiased
   -webkit-text-size-adjust 100%
   -ms-text-size-adjust 100%
-  font-body()
+  font-sans()
 
 
 body[class*="overflow-hidden"]
@@ -80,18 +73,6 @@ img
   position relative
 
 
-.container--small
-  max-width 1200px
-
-
-.container--narrow
-  --container-padding: 16px
-  max-width none
-
-  +mq(768)
-    --container-padding: 24px
-
-
 // Sections colors
 .section--color-scheme-1
 .section--color-scheme-2
@@ -108,23 +89,6 @@ img
   --text-color $white
 
 
-
-// Default style for slider arrows
-.swiper-button
-  background-color $yellow
-  width 34px
-  height @width
-  padding 5px
-  border-radius 50%
-
-  +mq(768)
-    width 44px
-    height @width
-    padding 10px
-
-  &:after
-    color $black
-    font-size 16px
 
 // Transitions
 .fade-enter-active,

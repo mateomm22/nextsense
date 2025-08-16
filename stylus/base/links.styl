@@ -17,7 +17,7 @@
 
   &:hover
     &:before
-      scale 1
+      translate 0 0
 
     span
       color var(--hover-text)
@@ -40,9 +40,9 @@
     width 100%
     height 100%
     border-radius inherit
-    scale 0
-    transform-origin: center
-    transition scale 0.2s ease-in
+    translate 0 100%
+    // transform-origin: center
+    transition translate 0.2s ease-in
     background-color rgba($black, 0.2)
 
 

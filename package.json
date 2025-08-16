@@ -22,8 +22,5 @@
     "babel-preset-minify": "^0.5.2",
     "concurrently": "^8.0.1",
     "stylus": "^0.59.0"
-  },
-  "dependencies": {
-    "swiper": "^11.2.10"
   }
 }

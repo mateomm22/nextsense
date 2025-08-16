@@ -14,212 +14,62 @@
       "name": "Hero",
       "settings": {
         "headline_1": "Transform your sleep.",
-        "headline_2": "Elevate your performance",
+        "headline_2": "Elevate your performance.",
         "description": "<p>NextSense Smartbuds adapt to your brain’s rhythm in real time—elevating sleep, restoring focus, and helping you feel truly refreshed. </p>",
         "bg_image": "shopify://shop_images/hand.webp",
         "image_1": "shopify://shop_images/floating_buds_1.webp",
         "image_2": "shopify://shop_images/floating_buds_2.webp",
         "link": "",
-        "open_in_new_tab": true
+        "open_in_new_tab": false
       }
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "ns_home_problem_mN3qk8": {
+      "type": "ns-home-problem",
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "card_kVhWhz": {
+          "type": "card",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+            "bg_image": "shopify://shop_images/d5f188b92f47e4a97fa66945a133580a2077b819.webp",
+            "headline": "Clinical-grade biosensor",
+            "description": "<p>EEG sensors capture your brain’s rhythms, while an integrated motion sensor tracks your body’s movement.</p>"
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "card_ezJXi3": {
+          "type": "card",
           "settings": {
-            "product_card_gap": 4,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+            "bg_image": "shopify://shop_images/71e044153ce530e0b08fe15fc99e85bc9d4b277f.webp",
+            "headline": "Advanced sleep metrics",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget odio ipsum. Praesent egestas dui id velit imperdiet aliquet.<br/></p>"
+          }
+        },
+        "card_Dyy3aK": {
+          "type": "card",
+          "settings": {
+            "bg_image": "shopify://shop_images/0e48ba66b1a9ab12773799dba6bd718f466042f5.webp",
+            "headline": "Intelligent relaxation experience",
+            "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget odio ipsum. Praesent egestas dui id velit imperdiet aliquet.</p>"
+          }
         }
       },
-      "name": "Featured collection",
+      "block_order": [
+        "card_kVhWhz",
+        "card_ezJXi3",
+        "card_Dyy3aK"
+      ],
+      "name": "Problem-Solution",
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "headline_1": "Tired isn't normal",
+        "description_1": "<p>Constant exhaustion chips away at who we are. It dulls our focus, flattens our mood, and disconnects us from our lives.</p>",
+        "headline_2": "Meet Smartbuds",
+        "description_2": "<p>The first truly wireless earbuds designed to restore energy–not just measure it.</p>",
+        "description_2_1": "<p>Smartbuds respond to your brain’s rhythm in real time, supporting deeper rest, clearer focus, and a more present state of mind.</p>",
+        "link": "",
+        "open_in_new_tab": false
       }
     }
   },
   "order": [
     "ns_hero_Ak7N8R",
-    "product_list_fa6P9H"
+    "ns_home_problem_mN3qk8"
   ]
 }

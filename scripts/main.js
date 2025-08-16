@@ -56,9 +56,6 @@ const problemTl = [
 	[homeProblemWrapper, {
 		"--text": "var(--black)",
 	}, { at: "<", duration: 0.5 }],
-	// [homeProblemWrapperSection2, {
-	// 	y: [-50, 0]
-	// }],
 	[homeProblemWrapperSection2, {
 		"filter": ["blur(10px)", "blur(0)"],
 		"opacity": [0, 1],
@@ -73,6 +70,14 @@ const problemTl = [
 ];
 
 const problemEarbudsTl = [
+	[homeProblemLeftEarbud, {
+		"opacity": [0, 1],
+	}],
+	[homeProblemRightEarbud, {
+		"opacity": [0, 1],
+	}, {
+			at: "-0.2"
+		}],
 	[homeProblemLeftEarbud, {
 		"y": -20,
 	}, {
@@ -102,5 +107,63 @@ scroll(animate(problemTl), {
 
 scroll(animate(problemEarbudsTl), {
 	target: homeProblemWrapperSection2,
-	offset: ["start 50%", "start -10%"]
+	offset: ["10% start", "75% start"]
 })
+
+// const swiperHome = new Swiper('.js-home-swiper', {
+// 	// Optional parameters
+// 	loop: true,
+// 	slidesPerView: 'auto',
+// 	spaceBetween: 16,
+// 	// Navigation arrows
+// 	navigation: {
+// 		nextEl: '.swiper-button-next',
+// 		prevEl: '.swiper-button-prev',
+// 	}
+// });
+
+/**
+ * Swiper home cards
+ */
+const { createApp, ref, onMounted } = Vue
+
+createApp({
+	setup() {
+		const activeCard = ref(null)
+		const swiperHome = ref(null)
+
+		function toggleCard(id) {
+			if (activeCard.value !== null && activeCard.value === id) {
+				activeCard.value = null;
+				return;
+			}
+
+			activeCard.value = id;
+
+			// swiperHome.value.slideTo(id - 1);
+			// setTimeout(() => {
+			// }, 500);
+		}
+
+		onMounted(() => {
+			swiperHome.value = new Swiper('.js-home-swiper', {
+				// Optional parameters
+				loop: true,
+				slidesPerView: 'auto',
+				spaceBetween: 16,
+				centerInsufficientSlides: true,
+				// Navigation arrows
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				}
+			});
+
+		});
+
+		return {
+			activeCard,
+			toggleCard
+		}
+	}
+}).mount('.js-carousel-app')

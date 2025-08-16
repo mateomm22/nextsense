@@ -1,32 +1,17 @@
-// Variables
-$black = #2B2E3F
-$white = #ffffff
-$lavender = #AAA8FF
-$berry = #7F9EF8
-$blush = #FAD0F3
-$yellow = #FFFBA5
-
-:root
-  --black: $black
-  --white: $white
-  --lavender: $lavender
-  --berry: $berry
-  --blush: $blush
-  --yellow: $yellow
-
 // Mixins
 mq($size)
   @media (min-width unit($size, px))
     {block}
 
 font-sans($weight = 400)
-  font-family sans-serif
+  font-family 'Miletus Grotesk', sans-serif
   font-weight $weight
   font-style normal
 
-font-serif($weight = 400)
-  font-family serif
+font-serif()
+  font-family 'Victor Serif', serif
   font-style normal
+  font-size-adjust ex-height 0.51
 
 transition($prop, $duration = .3s)
   transition $prop $duration ease-in
@@ -52,3 +37,28 @@ fit($val = cover, $pos = center)
     height 100%
     object-fit $val
     object-position $pos
+
+
+// Variables
+$black = #2B2E3F
+$white = #ffffff
+$lavender = #AAA8FF
+$berry = #7F9EF8
+$blush = #FAD0F3
+$yellow = #FFFBA5
+
+:root
+  --black: $black
+  --white: $white
+  --lavender: $lavender
+  --berry: $berry
+  --blush: $blush
+  --yellow: $yellow
+  --container-padding: 24px
+  --grid-margin: 8px
+
+  +mq(768)
+    --grid-margin: 32px
+    --container-padding: 48px
+  +mq(992)
+    --container-padding: 80px
