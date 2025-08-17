@@ -66,10 +66,56 @@
         "link": "",
         "open_in_new_tab": false
       }
+    },
+    "ns_home_features_slideshow_qUJ7Cj": {
+      "type": "ns-home-features-slideshow",
+      "blocks": {
+        "home_feature_wLte9V": {
+          "type": "home-feature",
+          "settings": {
+            "bg_image": "shopify://shop_images/1172d60c0d6f33c0926f2b9e8aafabf5cd13c792.webp",
+            "eyebrow": "Sleep",
+            "headline": "Get more restorative sleep",
+            "description": "<p>Smartbuds detect your brain’s natural sleep rhythms and adjust sound in real time to help you sleep more deeply and wake up more refreshed.</p>",
+            "image": "shopify://shop_images/sleep-graph.webp"
+          }
+        },
+        "home_feature_c8QpcB": {
+          "type": "home-feature",
+          "settings": {
+            "bg_image": "shopify://shop_images/04a7cfac1194d7b3d8be57b486cb34eee37aebeb.webp",
+            "eyebrow": "Focus",
+            "headline": "Stay in flow longer",
+            "description": "<p>When your mind starts to drift, subtle brain-responsive audio shifts nudge you back into a focused state — helping you concentrate without distraction.</p>",
+            "image": "shopify://shop_images/focus-graph.webp"
+          }
+        },
+        "home_feature_NHzm3N": {
+          "type": "home-feature",
+          "settings": {
+            "bg_image": "shopify://shop_images/0e48ba66b1a9ab12773799dba6bd718f466042f5.webp",
+            "eyebrow": "Relax",
+            "headline": "Unwind faster",
+            "description": "<p>Guided by your brain and body signals, Smartbuds create a personalized audio environment that gently helps you relax — no training required.</p>",
+            "image": "shopify://shop_images/relax-graph.webp"
+          }
+        }
+      },
+      "block_order": [
+        "home_feature_wLte9V",
+        "home_feature_c8QpcB",
+        "home_feature_NHzm3N"
+      ],
+      "name": "Features Slideshow",
+      "settings": {
+        "headline": "Your brain, optimized.",
+        "description": "<p>Smartbuds use real-time brain and body data to guide you into the state you need most — whether that’s deep sleep, focused flow, or restorative relaxation.</p>"
+      }
     }
   },
   "order": [
     "ns_hero_Ak7N8R",
-    "ns_home_problem_mN3qk8"
+    "ns_home_problem_mN3qk8",
+    "ns_home_features_slideshow_qUJ7Cj"
   ]
 }

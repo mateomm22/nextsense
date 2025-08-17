@@ -1,0 +1,132 @@
+<div class="home-features-slideshow js-home-features-slideshow">
+  <div class="home-slideshows__bg">
+    {% for block in section.blocks %}
+      {% if block.settings.bg_image %}
+        <picture class="home-feature__bg js-home-feature__bg" data-index="{{ forloop.index0 }}">
+          <!-- WebP source for modern browsers -->
+          <source
+            srcset="
+              {{ block.settings.bg_image | image_url: width: 480, format: 'webp' }} 480w,
+              {{ block.settings.bg_image | image_url: width: 768, format: 'webp' }} 768w,
+              {{ block.settings.bg_image | image_url: width: 1024, format: 'webp' }} 1024w,
+              {{ block.settings.bg_image | image_url: width: 1600, format: 'webp' }} 1600w,
+              {{ block.settings.bg_image | image_url: format: 'webp' }} 2000w,
+            "
+            sizes="100vw"
+            type="image/webp"
+          >
+
+          <!-- Fallback <img> tag -->
+          <img
+            src="{{ block.settings.bg_image | image_url }}"
+            alt="{{ block.settings.bg_image.alt | escape }}"
+            decoding="async"
+          >
+        </picture>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="home-features-slideshow__headline js-home-features-slideshow__headline">
+    <div class="container">
+      <h2 class="title title--xl">
+        {{ section.settings.headline }}
+      </h2>
+
+      <div class="text text--lg">
+        {{ section.settings.description }}
+      </div>
+    </div>
+  </div>
+
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+    <div class="single-home-feature js-single-home-feature">
+      <div class="single-feature__sticky">
+        <div class="container">
+          <div class="single-feature__graphic">
+            <img src="{{ block.settings.image | image_url: width: 450, format: 'webp' }}" alt="{{ block.settings.image.alt | escape }}">
+          </div>
+
+          <div class="single-feature__content">
+            <span class="eyebrow">
+              {{ block.settings.eyebrow }}
+            </span>
+
+            <h3 class="title title--sm">
+              {{ block.settings.headline }}
+            </h3>
+
+            {% if block.settings.description %}
+            <div class="text">
+              {{ block.settings.description }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Features Slideshow",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "home-feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Headline"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Graphic Element"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features Slideshow",
+      "category": "Banners",
+    }
+  ]
+}
+{% endschema %}

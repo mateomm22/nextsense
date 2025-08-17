@@ -3,7 +3,7 @@ const lenis = new Lenis({
 	autoRaf: true,
 });
 
-const { animate, scroll } = Motion;
+const { animate, scroll, stagger } = Motion;
 
 const scrollWrapper = document.querySelector(".js-hero-scroll");
 const text = document.querySelector(".js-hero-scroll h1");
@@ -110,17 +110,6 @@ scroll(animate(problemEarbudsTl), {
 	offset: ["10% start", "75% start"]
 })
 
-// const swiperHome = new Swiper('.js-home-swiper', {
-// 	// Optional parameters
-// 	loop: true,
-// 	slidesPerView: 'auto',
-// 	spaceBetween: 16,
-// 	// Navigation arrows
-// 	navigation: {
-// 		nextEl: '.swiper-button-next',
-// 		prevEl: '.swiper-button-prev',
-// 	}
-// });
 
 /**
  * Swiper home cards
@@ -167,3 +156,120 @@ createApp({
 		}
 	}
 }).mount('.js-carousel-app')
+
+
+/**
+ * Slideshow features
+ */
+const homeSlideshowWrapper = document.querySelector('.js-home-features-slideshow');
+const slideshowHeadline = document.querySelector('.js-home-features-slideshow__headline');
+const slideshowBg = document.querySelector('.home-slideshows__bg');
+
+
+// Pin background and headline
+scroll(progress => {
+	if (progress > 0 && progress < 1) {
+		// slideshowHeadline.style.position = 'fixed';
+		slideshowBg.style.position = 'fixed';
+	} else if (progress === 0) {
+		// slideshowHeadline.style.position = 'absolute';
+		slideshowBg.style.position = 'absolute';
+	}
+}, {
+	target: homeSlideshowWrapper,
+	offset: ['start start', 'end end']
+})
+
+// Change background
+const allBgs = [...document.querySelectorAll('.js-home-feature__bg')];
+const backgroundsTl = allBgs.map(bg => ([
+	bg, {
+		opacity: 1
+	}, {
+		duration: 0.25
+	}
+], [
+		bg, {
+			opacity: 1
+		}, {
+			delay: 1,
+		}
+	]));
+
+scroll(animate(backgroundsTl), {
+	target: homeSlideshowWrapper,
+	offset: ['start start', 'end end']
+})
+
+// "Hide" section after passing by scrolling
+// scroll(progress => {
+// 	if (progress >= 0 && progress < 0.01) {
+// 		// slideshowHeadline.style.position = 'fixed';
+// 		slideshowBg.style.position = 'fixed';
+// 	} else {
+// 		// slideshowHeadline.style.position = 'absolute';
+// 		slideshowBg.style.position = 'absolute';
+// 	}
+// }, {
+// 	target: homeSlideshowWrapper,
+// 	offset: ['end 5px', 'end -5px']
+// })
+
+// Animate each section entry and leave
+const allSlideshowFeatures = document.querySelectorAll('.js-single-home-feature');
+
+allSlideshowFeatures.forEach((slide, idx) => {
+	const backgroundTl = [
+		[
+			document.querySelector(`.js-home-feature__bg[data-index="${idx}"]`), {
+				opacity: 1
+			}
+		]
+	];
+
+	const slideGraphic = slide.querySelector('.single-feature__graphic');
+	const slideContent = slide.querySelectorAll('.single-feature__content *');
+
+	const enterSlideTl = [
+		[
+			slideContent, {
+				opacity: [0, 1],
+				y: [35, 0]
+			}, {
+				delay: stagger(0.1)
+			}
+		],
+		[
+			slideGraphic, {
+				opacity: [0, 1],
+				y: [-50, 0]
+			}
+		],
+		// [
+		// 	slide, {
+		// 		opacity: [1, 0],
+		// 		y: [0, -35]
+		// 	}, {
+		// 		delay: 2
+		// 	}
+		// ]
+	];
+
+	scroll(animate(backgroundTl), {
+		target: slide,
+		offset: ['start 80%', 'start 10%']
+	})
+
+	if (idx === 0) {
+		scroll(animate(enterSlideTl), {
+			target: slide,
+			offset: ['10% start', '30% start']
+		})
+	} else {
+		scroll(animate(enterSlideTl), {
+			target: slide,
+			offset: ['start start', '20% start']
+		})
+	}
+
+})

@@ -1,0 +1,111 @@
+.home-features-slideshow
+  position relative
+  background-color black
+
+.home-features-slideshow__headline
+  color $white
+  text-align center
+  position absolute
+  top 0
+  left 0
+  width 100%
+  padding-top 40px
+
+  +mq(768)
+    padding-top 100px
+
+  .title
+    margin-bottom 0.5em
+    font-serif()
+
+  .text
+    max-width 550px
+    margin: 0 auto
+
+.home-slideshows__bg
+  position absolute
+  top 0
+  width 100%
+  height 65lvh
+  z-index 0
+
+  +mq(768)
+    height 100lvh
+
+  &::before
+    content ''
+    background-color rgba(black, 0.4)
+    z-index 1
+    fullAbs()
+
+  &::after
+    content ''
+    display block
+    height 200px
+    width 100%
+    position absolute
+    bottom -10px
+    background linear-gradient(0deg, black 30%, rgba(black, 0) 100%)
+    z-index 1
+
+    +mq(768)
+      display none
+
+  .home-feature__bg
+    opacity 0
+
+    &:first-child
+      opacity 1
+
+    img
+      fullAbs()
+      fit(cover , left)
+
+
+.single-home-feature
+  position relative
+  height 300lvh
+
+  .single-feature__sticky
+    position sticky
+    top 0
+    height 100lvh
+    // padding-top 75lvh
+    padding-block 48px
+
+    +mq(768)
+      padding-block 120px
+
+    .container
+      height 100%
+      display grid
+      grid-template auto 25lvh / 1fr
+      align-items end
+
+      +mq(768)
+        grid-template auto / 1fr 1fr
+
+
+.single-feature__graphic
+  +mq(768)
+    grid-column 2 / 3
+    position absolute
+    // bottom 30lvh
+    bottom 50%
+    translate 0 50%
+
+
+.single-feature__content
+  max-width 450px
+  color $white
+
+  .eyebrow
+    display inline-block
+    margin-bottom 1em
+    background-image url("data:image/svg+xml,%3Csvg width='80' height='34' viewBox='0 0 80 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.2002 0.517578C7.53937 1.10984 23.8302 1.42758 40.0625 1.46191C55.7885 1.49518 71.5715 1.2634 76.4951 0.744141L76.9375 0.692383C77.357 0.638639 77.7513 0.723969 78.0439 0.922852L78.1631 1.01562L78.6895 1.47754V1.47852L79.1621 1.89453C79.4531 2.15065 79.5603 2.55347 79.4658 2.95605L79.4629 2.9707C78.8317 5.53577 78.5191 11.2116 78.5049 16.8232C78.4915 22.0848 78.7397 27.4034 79.2656 30.167L79.375 30.6855C79.4691 31.0907 79.3546 31.4976 79.0547 31.7529L78.5742 32.1602L78.0381 32.6152C77.7312 32.8749 77.2806 32.9883 76.7998 32.9229C72.4607 32.3306 56.1698 32.0138 39.9375 31.9795C24.2114 31.9462 8.42814 32.178 3.50488 32.6973L3.0625 32.749C2.58301 32.8105 2.13658 32.6896 1.83691 32.4258L1.30957 31.9629H1.31055L0.837891 31.5469C0.543436 31.2878 0.435735 30.878 0.536133 30.4707C1.16787 27.9056 1.48073 22.2297 1.49512 16.6182C1.5095 11.0055 1.22555 5.32766 0.625 2.75586C0.53084 2.35073 0.644484 1.94281 0.944336 1.6875L0.945312 1.68848L1.42578 1.28125V1.28027L1.96191 0.826172C2.26735 0.566882 2.71891 0.452135 3.2002 0.517578Z' stroke='white'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+  .title
+    font-serif()
+    margin-bottom 1em

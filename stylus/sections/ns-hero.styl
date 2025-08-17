@@ -8,7 +8,7 @@
 
   .hero-home__bg
     position absolute
-    top 60%
+    top 45%
     left 0
     z-index 1
     // height 70%
@@ -25,7 +25,9 @@
     +mq(1400)
       aspect-ratio: 21 / 9
       bottom auto
-      top 45%
+      top 50%
+    +mq(1800)
+      top 40%
 
     img
       height 100%
@@ -45,7 +47,6 @@
 
     h1
       text-align: center
-      font-size 72px
       font-sans(300)
 
       span
@@ -54,7 +55,10 @@
 
     .earbud
       position absolute
-      width 120px
+      width 60px
+
+      +mq(768)
+        width 120px
 
     .earbud--1
       top -50%

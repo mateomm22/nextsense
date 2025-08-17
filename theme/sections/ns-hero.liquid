@@ -8,6 +8,7 @@
           {{ section.settings.bg_image | image_url: width: 768, format: 'webp' }} 768w,
           {{ section.settings.bg_image | image_url: width: 1024, format: 'webp' }} 1024w,
           {{ section.settings.bg_image | image_url: width: 1600, format: 'webp' }} 1600w
+          {{ section.settings.bg_image | image_url: format: 'webp' }} 2000w
         "
         sizes="100vw"
         type="image/webp"
@@ -15,7 +16,7 @@
 
       <!-- Fallback <img> tag -->
       <img
-        src="{{ section.settings.bg_image | image_url: width: 1024 }}"
+        src="{{ section.settings.bg_image | image_url: width: 2000 }}"
         alt="{{ section.settings.bg_image.alt | escape }}"
         decoding="async"
       >
