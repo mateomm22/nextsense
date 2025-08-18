@@ -273,6 +273,7 @@ allSlideshowFeatures.forEach((slide, idx) => {
 	}
 });
 
+
 /**
  * Homepage carousel
  */
@@ -292,5 +293,37 @@ const homeCarousel = new Swiper('.js-home-carousel', {
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
+	}
+});
+
+
+/**
+ * Homepage carousel
+ */
+const carouselImages = new Swiper('.js-carousel-images', {
+	// Optional parameters
+	loop: true,
+	spaceBetween: 1,
+	centerInsufficientSlides: true,
+	slidesPerView: 2,
+	// Navigation arrows
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	// Responsive breakpoints
+	breakpoints: {
+		// when window width is >= 450px
+		450: {
+			slidesPerView: 3,
+		},
+		// when window width is >= 768px
+		768: {
+			slidesPerView: 4,
+		},
+		// when window width is >= 992px
+		992: {
+			slidesPerView: 5,
+		}
 	}
 });
