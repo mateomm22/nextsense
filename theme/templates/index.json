@@ -11,7 +11,7 @@
   "sections": {
     "ns_hero_hfQy8Q": {
       "type": "ns-hero",
-      "name": "NextSense Hero",
+      "name": "NS Hero",
       "settings": {
         "headline_1": "Transform your sleep.",
         "headline_2": "Elevate your performance.",
@@ -56,7 +56,7 @@
         "card_ezJXi3",
         "card_Dyy3aK"
       ],
-      "name": "NextSense Prob-Solution",
+      "name": "NS Prob-Solution",
       "settings": {
         "headline_1": "Tired isn't normal",
         "description_1": "<p>Constant exhaustion chips away at who we are. It dulls our focus, flattens our mood, and disconnects us from our lives.</p>",
@@ -106,7 +106,7 @@
         "home_feature_c8QpcB",
         "home_feature_NHzm3N"
       ],
-      "name": "NextSense Slideshow",
+      "name": "NS Slideshow",
       "settings": {
         "headline": "Your brain, optimized.",
         "description": "<p>Smartbuds use real-time brain and body data to guide you into the state you need most — whether that’s deep sleep, focused flow, or restorative relaxation.</p>"
@@ -142,17 +142,102 @@
         "home_carousel_slide_FcNXd8",
         "home_carousel_slide_6ejLEV"
       ],
-      "name": "NextSense Home Carousel",
+      "name": "NS Home Carousel",
       "settings": {
         "headline_1": "Grounded in research",
         "headline_2": "Engineered for results"
       }
+    },
+    "ns_logos_marquee_ffVbJF": {
+      "type": "ns-logos-marquee",
+      "blocks": {
+        "single_logo_fGrpq6": {
+          "type": "single-logo",
+          "settings": {
+            "logo": "shopify://shop_images/Emory_University_Logo_ns_1.webp"
+          }
+        },
+        "single_logo_EPjzxQ": {
+          "type": "single-logo",
+          "settings": {
+            "logo": "shopify://shop_images/Emory_University_Logo_ns_1-1.webp"
+          }
+        },
+        "single_logo_jpCHkP": {
+          "type": "single-logo",
+          "settings": {
+            "logo": "shopify://shop_images/Emory_University_Logo_ns_1-2.webp"
+          }
+        },
+        "single_logo_Pprdzh": {
+          "type": "single-logo",
+          "settings": {
+            "logo": "shopify://shop_images/Emory_University_Logo_ns_1-3.webp"
+          }
+        }
+      },
+      "block_order": [
+        "single_logo_fGrpq6",
+        "single_logo_EPjzxQ",
+        "single_logo_jpCHkP",
+        "single_logo_Pprdzh"
+      ],
+      "name": "NS Logos Marquee",
+      "settings": {
+        "eyebrow": "Featured In"
+      }
+    },
+    "ns_carousel_images_9gmtWh": {
+      "type": "ns-carousel-images",
+      "blocks": {
+        "single_image_ymrThV": {
+          "type": "single-image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_6667339.webp"
+          }
+        },
+        "single_image_XqrMFK": {
+          "type": "single-image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_6667340.webp"
+          }
+        },
+        "single_image_xJFpg9": {
+          "type": "single-image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_6667341.webp"
+          }
+        },
+        "single_image_9Wq78X": {
+          "type": "single-image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_6667342.webp"
+          }
+        },
+        "single_image_9f4QK3": {
+          "type": "single-image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_6667343.webp"
+          }
+        }
+      },
+      "block_order": [
+        "single_image_ymrThV",
+        "single_image_XqrMFK",
+        "single_image_xJFpg9",
+        "single_image_9Wq78X",
+        "single_image_9f4QK3"
+      ],
+      "name": "NS Carousel Images",
+      "settings": {}
     }
   },
   "order": [
     "ns_hero_hfQy8Q",
     "ns_home_problem_xtxeHd",
     "ns_home_features_slideshow_dtJiCH",
-    "ns_home_carousel_ik68fD"
+    "ns_home_carousel_ik68fD",
+    "ns_logos_marquee_ffVbJF",
+    "ns_carousel_images_9gmtWh"
   ]
 }

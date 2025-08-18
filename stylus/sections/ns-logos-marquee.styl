@@ -1,0 +1,52 @@
+.wrap-logos-marquee
+  background-color $white
+  padding 24px 0
+
+  +mq(768)
+    padding 40px 0
+
+  .grid-line
+    display block
+    border-block 1px solid $lavender
+    background none
+    fullAbs()
+    pointer-events none
+    opacity 0.3
+    z-index 2
+
+  .eyebrow
+    display table
+    margin 0 auto 3rem
+    background-image url("data:image/svg+xml,%3Csvg width='102' height='34' viewBox='0 0 102 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M101.21 3.0901C101.343 2.53086 101.209 1.91977 100.771 1.51885L100.318 1.10313L99.8118 0.64018C99.4006 0.26334 98.8255 0.120752 98.2562 0.196676C89.9812 1.29664 12.1367 1.19572 3.88046 0.0226073C3.31219 -0.0579456 2.73305 0.0753834 2.31499 0.444816L1.80009 0.89943L1.33855 1.30682C0.893818 1.70033 0.748536 2.30864 0.87405 2.86974C1.99874 7.88346 1.97205 25.3551 0.790047 30.3512C0.657615 30.9105 0.791036 31.5216 1.22885 31.9225L1.68248 32.3382L2.18849 32.8012C2.59963 33.178 3.17482 33.3206 3.74408 33.2447C12.0181 32.1447 89.8635 32.2456 98.1198 33.4187C98.6881 33.4993 99.2662 33.366 99.6853 32.9965L100.2 32.5419L100.662 32.1345C101.106 31.741 101.252 31.1327 101.126 30.5716C100.002 25.5579 100.029 8.08623 101.21 3.0901Z' fill='%23AAA8FF'/%3E%3C/svg%3E%0A")
+    background-repeat no-repeat
+    background-size 100% 100%
+    color $black
+
+.logos-marquee
+  width 100%
+  overflow hidden
+
+  .track
+    display: flex
+    width fit-content
+    will-change translate
+    animation scroll-marquee calc(var(--speed) * 1s) linear infinite
+
+  .single-logo
+    width 200px
+    padding 1rem 3rem
+    white-space nowrap
+    margin-right 20px
+
+    +mq(768)
+      width 275px
+
+/* Keyframes for animation */
+@keyframes scroll-marquee {
+  0% {
+    translate 0 0
+  }
+  100% {
+    translate -50% 0
+  }
+}

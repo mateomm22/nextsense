@@ -1,0 +1,57 @@
+<div class="wrap-logos-marquee">
+  <div class="grid-line"></div>
+
+  <div class="logos-marquee__headline">
+    <div class="container container--wide">
+      {% if section.blocks.size > 0 %}
+      <div class="logos-marquee-swiper">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide">
+              <img src="{{ block.settings.image | image_url: width: 350, format: 'webp' }}" alt="{{ block.settings.image.alt | escape }}">
+            </div>
+          {% endfor %}
+
+          {% comment %} Repeat logos to create infinite loop {% endcomment %}
+          {% if section.blocks.size < 5 %}
+            {% for block in section.blocks %}
+              <div class="swiper-slide">
+                <img src="{{ block.settings.image | image_url: width: 350, format: 'webp' }}" alt="{{ block.settings.logo.alt | escape }}">
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "NS Carousel Images",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "blocks": [
+    {
+      "type": "single-image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NS Carousel Images",
+      "category": "NextSense",
+    }
+  ]
+}
+{% endschema %}
