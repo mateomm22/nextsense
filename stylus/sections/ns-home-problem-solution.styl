@@ -63,13 +63,14 @@
     .swiper-slide
       width 80%
       max-width 320px
-      transition max-width 0.3s ease-out
+      transition max-width 0.5s ease-in
 
       +mq(768)
         max-width 390px
 
       &:has(.card--opened)
         max-width: 750px
+
         .card__content
           .title
             margin-bottom 0.5em
@@ -164,6 +165,7 @@
     .card__content
       flex 1
       text-align left
+      padding-right 16px
 
       .title
         margin-bottom 0
@@ -175,17 +177,22 @@
         height 0
         overflow hidden
         transition: height 0.35s ease
+        text-wrap balance
 
     .card__action
-      flex 0 0 47px
+      --size: 35px
+      flex 0 0 var(--size)
       background-color $white
-      width 47px
-      height @width
+      width var(--size)
+      height var(--size)
       border-radius 50%
       display grid
       place-items center
       cursor pointer
       transition: rotate 0.35s ease
+
+      +mq(768)
+        --size: 47px
 
       svg
         fill $black
