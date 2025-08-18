@@ -110,11 +110,40 @@ img
 .slide-leave-to
   translate 0 -20px
 
-// Whatsapp button
-.whatsapp-button
-  width 48px
-  height 48px
-  position fixed
-  bottom 50px
-  right 15px
-  z-index 10000
+
+.shopify-section
+  position relative
+
+  &::after
+    content ''
+    display block
+    border-inline 1px solid $lavender
+    position absolute
+    top 0
+    left var(--grid-margin)
+    height 100%
+    width calc(100% - (var(--grid-margin) * 2))
+    pointer-events none
+    opacity 0.3
+    z-index 2
+
+/* swiper default arrows */
+.swiper-button
+  height auto
+
+  &::after
+    display none
+
+  svg
+    fill $black
+    width 14px
+
+    +mq(576)
+      width 24px
+
+.swiper-button-prev
+  left auto
+  right 55%
+
+.swiper-button-next
+  left 55%
