@@ -1,0 +1,83 @@
+.wrap-home-carousel
+  position relative
+  background-color $white
+  padding-block 48px
+
+  +mq(768)
+    padding-block 110px
+
+.home-carousel__headline
+  margin-bottom 3em
+
+  +mq(768)
+    margin-bottom 5em
+
+  .title
+    text-align center
+    font-sans()
+
+    span
+      display block
+      font-serif()
+
+.home-carousel
+  max-width 1114px
+  margin 0 auto
+  padding-bottom 48px
+
+  .swiper-pagination,
+  .swiper-button
+    top auto
+
+  .swiper-pagination
+    bottom 10px
+
+    .swiper-pagination-bullet
+      width 6px
+      height @width
+      margin 0 2px
+
+    .swiper-pagination-bullet-active
+      background $black
+
+  .swiper-button
+    height auto
+    bottom 12px
+
+    +mq(576)
+      bottom 10px
+
+    &::after
+      display none
+
+    svg
+      fill $black
+
+  .swiper-button-prev
+    left auto
+    right 55%
+
+  .swiper-button-next
+    left 55%
+
+.single-home-carousel
+  aspect-ratio 1.7812599936 / 1
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1114 626' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cpath d='M1113.29 47.786C1115.21 39.1378 1113.28 29.6877 1106.93 23.4879L1100.35 17.059L1093.02 9.89989C1087.06 4.07236 1078.72 1.86734 1070.47 3.04144C950.518 20.0515 165.187 18.4909 45.5067 0.349605C37.2691 -0.896085 28.874 1.16575 22.814 6.87874L15.3501 13.909L8.65979 20.209C2.21303 26.2943 0.107072 35.7014 1.92649 44.3783C18.2296 121.912 17.8429 500.348 0.708805 577.609C-1.2109 586.257 0.723134 595.707 7.06961 601.907L13.6453 608.336L20.9803 615.495C26.94 621.323 35.2778 623.528 43.5297 622.354C163.468 605.344 948.813 606.904 1068.49 625.046C1076.73 626.291 1085.11 624.229 1091.19 618.516L1098.65 611.486L1105.34 605.186C1111.79 599.101 1113.89 589.694 1112.07 581.017C1095.77 503.483 1096.16 125.047 1113.28 47.786H1113.29Z' fill='%23000'/%3E%3C/svg%3E%0A")
+  mask-repeat no-repeat
+  mask-size 100%
+  display grid
+  place-items center
+  grid-template 1fr / 1fr
+
+  *
+    grid-row 1 / 1
+    grid-column 1 / 1
+
+  .single-home-carousel__bg
+    fullAbs()
+    fit()
+
+  .single-home-carousel__graphic
+    max-width 70%
+    backdrop-filter blur(10px)
+    border-radius 20%

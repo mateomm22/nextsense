@@ -1,57 +1,31 @@
-<div class="home-problem-solution js-home-problem-solution" style="--text: var(--white)">
-  <div class="section section--1">
+<div class="wrap-home-carousel">
+  <div class="home-carousel__headline">
     <div class="container">
-      <h2 class="title title--xl">
+      <h2 class="title">
         {{ section.settings.headline_1 }}
+          <span>
+            {{ section.settings.headline_2 }}
+          </span>
       </h2>
 
-      <div class="text text--lg">
-        {{ section.settings.description_1 }}
-      </div>
-    </div>
-  </div>
-
-  <div class="section section--2">
-    <div class="container">
-      <h2 class="title title--xl">
-        <img src="{{ 'earbud-l.webp' | asset_url }}" class="earbud earbud--l" alt="">
-        {{ section.settings.headline_2 }}
-        <img src="{{ 'earbud-r.webp' | asset_url }}" class="earbud earbud--r" alt="">
-      </h2>
-
-      <div class="text text--xl">
-        {{ section.settings.description_2 }}
-      </div>
-
-      <div class="text">
-        {{ section.settings.description_2_1 }}
-      </div>
-
-      <a href="" class="btn btn--clear">
-        <span class="btn__text">
-          Order Now
-        </span>
-      </a>
     </div>
   </div>
 
   {% if section.blocks.size > 0 %}
-  <div class="section section--carousel js-carousel-app">
     <div class="container">
-      <!-- Slider main container -->
-      <div class="swiper carousel js-home-swiper">
-        <!-- Additional required wrapper -->
+      <div class="swiper home-carousel js-home-carousel">
         <div class="swiper-wrapper">
           {% for block in section.blocks %}
-          <div class="swiper-slide">
-            <div class="card" :class="{'card--opened': activeCard === {{ forloop.index }}}">
+            <div class="swiper-slide single-home-carousel">
               {% if block.settings.bg_image %}
-                <picture class="card__bg">
+                <picture>
                   <!-- WebP source for modern browsers -->
                   <source
                     srcset="
                       {{ block.settings.bg_image | image_url: width: 480, format: 'webp' }} 480w,
                       {{ block.settings.bg_image | image_url: width: 768, format: 'webp' }} 768w,
+                      {{ block.settings.bg_image | image_url: width: 1024, format: 'webp' }} 1024w,
+                      {{ block.settings.bg_image | image_url: width: 1400, format: 'webp' }} 1400w
                     "
                     sizes="100vw"
                     type="image/webp"
@@ -59,39 +33,24 @@
 
                   <!-- Fallback <img> tag -->
                   <img
-                    src="{{ block.settings.bg_image | image_url: width: 768 }}"
+                    src="{{ block.settings.bg_image | image_url: width: 1400 }}"
                     alt="{{ block.settings.bg_image.alt | escape }}"
+                    class="single-home-carousel__bg"
                     decoding="async"
                   >
                 </picture>
               {% endif %}
-              <div class="card__index">
-                <span class="title">
-                  {{ forloop.index }}
-                </span>
-              </div>
 
-              <div class="card__content">
-                <h3 class="title title--sm">
-                  {{ block.settings.headline }}
-                </h3>
+              <div class="single-home-carousel__graphic">
+                <img src="{{ block.settings.graphic | image_url: width: 450, format: 'webp' }}" alt="{{ block.settings.graphic.alt | escape }}">
 
-                {% if block.settings.description %}
-                <div class="text">
-                  {{ block.settings.description }}
-                </div>
-                {% endif %}
-              </div>
-
-              <div class="card__action" @click="toggleCard({{ forloop.index }})">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8.25009 17.5V9.75H0.500092L0.500092 8.25H8.25009V0.5L9.75009 0.5V8.25H17.5001V9.75L9.75009 9.75L9.75009 17.5H8.25009Z" />
-                </svg>
               </div>
             </div>
-          </div>
           {% endfor %}
         </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
 
         <!-- If we need navigation buttons -->
         <div class="swiper-button swiper-button-prev">
@@ -108,67 +67,33 @@
         </div>
       </div>
     </div>
-  </div>
   {% endif %}
+
 </div>
 
 {% schema %}
 {
-  "name": "Problem-Solution",
+  "name": "Home Carousel (Features)",
   "tag": "section",
   "disabled_on": {
     "groups": ["header"]
   },
   "settings": [
     {
-      "type": "header",
-      "content": "Section 1"
-    },
-    {
       "type": "text",
       "id": "headline_1",
-      "label": "Headline"
-    },
-    {
-      "type": "richtext",
-      "id": "description_1",
-      "label": "Description"
-    },
-    {
-      "type": "header",
-      "content": "Section 2"
+      "label": "Headline 1"
     },
     {
       "type": "text",
       "id": "headline_2",
-      "label": "Headline"
-    },
-    {
-      "type": "richtext",
-      "id": "description_2",
-      "label": "Description big"
-    },
-    {
-      "type": "richtext",
-      "id": "description_2_1",
-      "label": "Description"
-    },
-    {
-      "type": "url",
-      "id": "link",
-      "label": "t:settings.link"
-    },
-    {
-      "type": "checkbox",
-      "id": "open_in_new_tab",
-      "label": "t:settings.open_new_tab",
-      "default": false
+      "label": "Headline 2"
     }
   ],
   "blocks": [
     {
-      "type": "card",
-      "name": "Card",
+      "type": "home-carousel-slide",
+      "name": "Carousel Slide",
       "settings": [
         {
           "type": "image_picker",
@@ -176,22 +101,17 @@
           "label": "Background Image"
         },
         {
-          "type": "text",
-          "id": "headline",
-          "label": "Headline"
-        },
-        {
-          "type": "richtext",
-          "id": "description",
-          "label": "Description"
+          "type": "image_picker",
+          "id": "graphic",
+          "label": "Graphic element"
         },
       ]
     }
   ],
   "presets": [
     {
-      "name": "Problem-Solution",
-      "category": "Banners",
+      "name": "Home Carousel (Features)",
+      "category": "Section",
     }
   ]
 }

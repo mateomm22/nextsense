@@ -35,8 +35,12 @@
   &::before
     content ''
     background-color rgba(black, 0.4)
+    display none
     z-index 1
     fullAbs()
+
+    +mq(768)
+      display block
 
   &::after
     content ''

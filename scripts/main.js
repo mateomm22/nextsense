@@ -271,5 +271,26 @@ allSlideshowFeatures.forEach((slide, idx) => {
 			offset: ['start start', '20% start']
 		})
 	}
+});
 
-})
+/**
+ * Homepage carousel
+ */
+const homeCarousel = new Swiper('.js-home-carousel', {
+	// Optional parameters
+	loop: true,
+	slidesPerView: 1,
+	centeredSlides: true,
+	effect: 'fade',
+	fadeEffect: {
+		crossFade: true
+	},
+	pagination: {
+		el: '.swiper-pagination'
+	},
+	// Navigation arrows
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	}
+});
