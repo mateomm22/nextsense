@@ -9,9 +9,9 @@
  */
 {
   "sections": {
-    "ns_hero_Ak7N8R": {
+    "ns_hero_hfQy8Q": {
       "type": "ns-hero",
-      "name": "Hero",
+      "name": "NextSense Hero",
       "settings": {
         "headline_1": "Transform your sleep.",
         "headline_2": "Elevate your performance.",
@@ -23,7 +23,7 @@
         "open_in_new_tab": false
       }
     },
-    "ns_home_problem_mN3qk8": {
+    "ns_home_problem_xtxeHd": {
       "type": "ns-home-problem",
       "blocks": {
         "card_kVhWhz": {
@@ -56,7 +56,7 @@
         "card_ezJXi3",
         "card_Dyy3aK"
       ],
-      "name": "Problem-Solution",
+      "name": "NextSense Prob-Solution",
       "settings": {
         "headline_1": "Tired isn't normal",
         "description_1": "<p>Constant exhaustion chips away at who we are. It dulls our focus, flattens our mood, and disconnects us from our lives.</p>",
@@ -67,7 +67,7 @@
         "open_in_new_tab": false
       }
     },
-    "ns_home_features_slideshow_qUJ7Cj": {
+    "ns_home_features_slideshow_dtJiCH": {
       "type": "ns-home-features-slideshow",
       "blocks": {
         "home_feature_wLte9V": {
@@ -106,16 +106,53 @@
         "home_feature_c8QpcB",
         "home_feature_NHzm3N"
       ],
-      "name": "Features Slideshow",
+      "name": "NextSense Slideshow",
       "settings": {
         "headline": "Your brain, optimized.",
         "description": "<p>Smartbuds use real-time brain and body data to guide you into the state you need most — whether that’s deep sleep, focused flow, or restorative relaxation.</p>"
       }
+    },
+    "ns_home_carousel_ik68fD": {
+      "type": "ns-home-carousel",
+      "blocks": {
+        "home_carousel_slide_MUk8UK": {
+          "type": "home-carousel-slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/6f300120dd666e1f944e1ff7529df24832cbff25.webp",
+            "graphic": "shopify://shop_images/Group_61899.webp"
+          }
+        },
+        "home_carousel_slide_FcNXd8": {
+          "type": "home-carousel-slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/6f300120dd666e1f944e1ff7529df24832cbff25.webp",
+            "graphic": "shopify://shop_images/Group_61899.webp"
+          }
+        },
+        "home_carousel_slide_6ejLEV": {
+          "type": "home-carousel-slide",
+          "settings": {
+            "bg_image": "shopify://shop_images/6f300120dd666e1f944e1ff7529df24832cbff25.webp",
+            "graphic": "shopify://shop_images/Group_61899.webp"
+          }
+        }
+      },
+      "block_order": [
+        "home_carousel_slide_MUk8UK",
+        "home_carousel_slide_FcNXd8",
+        "home_carousel_slide_6ejLEV"
+      ],
+      "name": "NextSense Home Carousel",
+      "settings": {
+        "headline_1": "Grounded in research",
+        "headline_2": "Engineered for results"
+      }
     }
   },
   "order": [
-    "ns_hero_Ak7N8R",
-    "ns_home_problem_mN3qk8",
-    "ns_home_features_slideshow_qUJ7Cj"
+    "ns_hero_hfQy8Q",
+    "ns_home_problem_xtxeHd",
+    "ns_home_features_slideshow_dtJiCH",
+    "ns_home_carousel_ik68fD"
   ]
 }
