@@ -169,10 +169,8 @@ const slideshowBg = document.querySelector('.home-slideshows__bg');
 // Pin background and headline
 scroll(progress => {
 	if (progress > 0 && progress < 1) {
-		// slideshowHeadline.style.position = 'fixed';
 		slideshowBg.style.position = 'fixed';
 	} else if (progress === 0) {
-		// slideshowHeadline.style.position = 'absolute';
 		slideshowBg.style.position = 'absolute';
 	}
 }, {
@@ -244,15 +242,7 @@ allSlideshowFeatures.forEach((slide, idx) => {
 				opacity: [0, 1],
 				y: [-50, 0]
 			}
-		],
-		// [
-		// 	slide, {
-		// 		opacity: [1, 0],
-		// 		y: [0, -35]
-		// 	}, {
-		// 		delay: 2
-		// 	}
-		// ]
+		]
 	];
 
 	scroll(animate(backgroundTl), {
@@ -327,3 +317,27 @@ const carouselImages = new Swiper('.js-carousel-images', {
 		}
 	}
 });
+
+
+/**
+ * FAQs accordions
+ */
+createApp({
+	setup() {
+		const activeFaq = ref(null)
+
+		function toggleFaq(id) {
+			if (activeFaq.value !== null && activeFaq.value === id) {
+				activeFaq.value = null;
+				return;
+			}
+
+			activeFaq.value = id;
+		}
+
+		return {
+			activeFaq,
+			toggleFaq
+		}
+	}
+}).mount('.js-faqs-content')

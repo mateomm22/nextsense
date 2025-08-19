@@ -1,0 +1,121 @@
+<div class="wrap-faqs">
+  <div class="grid-line"></div>
+
+  <div class="faqs__headline">
+    <h2 class="title">
+      {{ section.settings.headline_1 }}
+      <span>
+        {{ section.settings.headline_2 }}
+      </span>
+    </h2>
+
+    <div class="faqs__note">
+      <div class="text">
+        {{ section.settings.note }}
+      </div>
+    </div>
+  </div>
+
+  {% if section.blocks.size > 0 %}
+    <div class="faqs__content js-faqs-content">
+      {% for block in section.blocks %}
+        {% if block.type == 'faq-category' %}
+          <div class="faqs__category">
+            <h3 class="title title--sm">
+              {{ block.settings.headline }}
+            </h3>
+          </div>
+        {% endif %}
+        {% if block.type == 'faq-item' %}
+          <div class="single-faq" :class="{'active': activeFaq === {{ forloop.index }}}">
+            <div class="single-faq__header" @click="toggleFaq({{ forloop.index }})">
+              <h3 class="text text--xl">{{ block.settings.question }}</h3>
+              <div class="single-faq__icon">
+                <div class="horizontal"></div>
+                <div class="vertical"></div>
+              </div>
+            </div>
+
+            <div class="single-faq__text">
+              <div class="text">{{ block.settings.answer | newline_to_br }}</div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="faqs__note faqs__note--mobile">
+    <div class="text">
+      {{ section.settings.note }}
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "NS FAQs",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline_1",
+      "label": "Headline 1"
+    },
+    {
+      "type": "text",
+      "id": "headline_2",
+      "label": "Headline 2"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Notes"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "faq-category",
+      "name": "FAQ Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Headline"
+        },
+      ]
+    },
+    {
+      "type": "faq-item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NS FAQs",
+      "category": "NextSense",
+    }
+  ]
+}
+{% endschema %}

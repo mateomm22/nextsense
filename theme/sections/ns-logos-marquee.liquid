@@ -24,7 +24,7 @@
               </div>
             {% endfor %}
           {% endif %}
-          {% if section.blocks.size < 4 %}
+          {% if section.blocks.size < 5 %}
             {% for block in section.blocks %}
               <div class="single-logo">
                 <img src="{{ block.settings.logo | image_url: width: 250, format: 'webp' }}" alt="{{ block.settings.logo.alt | escape }}">

@@ -1,7 +1,10 @@
 // Base Paragraph
 .text
   margin-bottom 0
-  --size: 16px
+  --size 16px
+
+  +mq(2000)
+    --size 20px
 
   &,
   p
@@ -18,6 +21,8 @@
 
   +mq(768)
     --size 20px
+  +mq(2000)
+    --size 24px
 
 .text--xl
   --size 20px
@@ -25,6 +30,8 @@
 
   +mq(768)
     --size 27px
+  +mq(2000)
+    --size 32px
 
 
 // Headlines

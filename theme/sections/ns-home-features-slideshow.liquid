@@ -53,6 +53,12 @@
               {{ block.settings.eyebrow }}
             </span>
 
+            {% if block.settings.coming_soon %}
+            <span class="eyebrow eyebrow--gradient">
+              Coming Soon
+            </span>
+            {% endif %}
+
             <h3 class="title title--sm">
               {{ block.settings.headline }}
             </h3>
@@ -103,6 +109,12 @@
           "type": "text",
           "id": "eyebrow",
           "label": "Eyebrow"
+        },
+        {
+          "type": "checkbox",
+          "id": "coming_soon",
+          "label": "Show 'Coming Soon'",
+          "default": false
         },
         {
           "type": "text",

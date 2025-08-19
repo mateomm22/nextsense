@@ -75,6 +75,7 @@
           "settings": {
             "bg_image": "shopify://shop_images/1172d60c0d6f33c0926f2b9e8aafabf5cd13c792.webp",
             "eyebrow": "Sleep",
+            "coming_soon": false,
             "headline": "Get more restorative sleep",
             "description": "<p>Smartbuds detect your brain’s natural sleep rhythms and adjust sound in real time to help you sleep more deeply and wake up more refreshed.</p>",
             "image": "shopify://shop_images/sleep-graph.webp"
@@ -85,6 +86,7 @@
           "settings": {
             "bg_image": "shopify://shop_images/04a7cfac1194d7b3d8be57b486cb34eee37aebeb.webp",
             "eyebrow": "Focus",
+            "coming_soon": true,
             "headline": "Stay in flow longer",
             "description": "<p>When your mind starts to drift, subtle brain-responsive audio shifts nudge you back into a focused state — helping you concentrate without distraction.</p>",
             "image": "shopify://shop_images/focus-graph.webp"
@@ -95,6 +97,7 @@
           "settings": {
             "bg_image": "shopify://shop_images/0e48ba66b1a9ab12773799dba6bd718f466042f5.webp",
             "eyebrow": "Relax",
+            "coming_soon": true,
             "headline": "Unwind faster",
             "description": "<p>Guided by your brain and body signals, Smartbuds create a personalized audio environment that gently helps you relax — no training required.</p>",
             "image": "shopify://shop_images/relax-graph.webp"
@@ -184,7 +187,8 @@
       ],
       "name": "NS Logos Marquee",
       "settings": {
-        "eyebrow": "Featured In"
+        "eyebrow": "Featured In",
+        "speed": 15
       }
     },
     "ns_carousel_images_9gmtWh": {
@@ -230,6 +234,174 @@
       ],
       "name": "NS Carousel Images",
       "settings": {}
+    },
+    "ns_faqs_7TgaXD": {
+      "type": "ns-faqs",
+      "blocks": {
+        "faq_category_NA8bV6": {
+          "type": "faq-category",
+          "settings": {
+            "headline": "Charging & Setup"
+          }
+        },
+        "faq_item_BYJqAq": {
+          "type": "faq-item",
+          "settings": {
+            "question": "How do I know if my earbuds are charging properly?",
+            "answer": "<p>Watch for a quick blink on the left or right LED when you place each earbud in the case. Solid lights mean the case is charged; a blinking center light means it's in pairing mode.</p>"
+          }
+        },
+        "faq_item_E9Y3EX": {
+          "type": "faq-item",
+          "settings": {
+            "question": "One earbud isn't charging—what should I do?",
+            "answer": "<p>Check that it's seated correctly in the case. You should see a quick LED blink on that side. If not, try cleaning the contact points.</p>"
+          }
+        },
+        "faq_item_BCL3zr": {
+          "type": "faq-item",
+          "settings": {
+            "question": "My Bluetooth won't connect",
+            "answer": "<p>Forget the device in your phone's Bluetooth settings, then re-pair using the NextSense app.</p>"
+          }
+        },
+        "faq_item_rk6F3C": {
+          "type": "faq-item",
+          "settings": {
+            "question": "How do I reset my Smartbuds?",
+            "answer": "<p>Place both buds in the case. Hold the case button for 10 seconds until the LEDs blink. Then reconnect via the app.</p>"
+          }
+        },
+        "faq_item_ggyKwH": {
+          "type": "faq-item",
+          "settings": {
+            "question": "How do I know if I have the right size?",
+            "answer": "<p>The earbuds should feel snug but comfortable, without gaps between the bud and your ear. To position them correctly, insert the tip into your ear canal, then gently twist it toward the back of your head until secure. Make sure the top of the bud touches the upper ridge of your ear—this ensures it stays in place while you sleep.</p>"
+          }
+        },
+        "faq_category_KtUzyF": {
+          "type": "faq-category",
+          "settings": {
+            "headline": "EEG & Brain data"
+          }
+        },
+        "faq_item_PHMQ9Q": {
+          "type": "faq-item",
+          "settings": {
+            "question": "What is EEG and why does it matter?",
+            "answer": "<p>EEG (electroencephalography) measures electrical activity in the brain. It's the gold standard for sleep science, allowing Smartbuds to detect sleep stages and optimize audio in real time—unlike wrist trackers that only infer sleep from movement or heart rate.</p>"
+          }
+        },
+        "faq_item_pMCRLe": {
+          "type": "faq-item",
+          "settings": {
+            "question": "Can Smartbuds read my thoughts?",
+            "answer": "<p>No. EEG detects patterns like sleep depth or transitions—not thoughts, memories, or emotions. Your mental privacy is deeply respected.</p>"
+          }
+        },
+        "faq_item_Tkrj9a": {
+          "type": "faq-item",
+          "settings": {
+            "question": "Is my brain data private?",
+            "answer": "<p>Yes. We never sell or share your data. Data sharing is off by default, and all information is encrypted, stored securely, and anonymized before leaving your device. You can delete your data anytime from within the app.</p>"
+          }
+        },
+        "faq_item_LnkeBV": {
+          "type": "faq-item",
+          "settings": {
+            "question": "What is slow-wave sleep?",
+            "answer": "<p>Slow-wave sleep, also called deep sleep, is the most restorative stage of sleep. It's when your brain produces slow, high-amplitude delta waves. This stage is essential for waking up refreshed.</p>"
+          }
+        },
+        "faq_category_jy6AHk": {
+          "type": "faq-category",
+          "settings": {
+            "headline": "Sounds"
+          }
+        },
+        "faq_item_c3GB7n": {
+          "type": "faq-item",
+          "settings": {
+            "question": "Can sound hurt my sleep?",
+            "answer": "<p>It can—if it's the wrong kind. Jarring, unpredictable, or overly stimulating audio can disrupt your rest. That's why Smartbuds use gentle soundscapes specifically designed to support healthy sleep. When personalized and timed right, sound can actually enhance your sleep rather than interrupt it.</p>"
+          }
+        },
+        "faq_item_akQ4tq": {
+          "type": "faq-item",
+          "settings": {
+            "question": "What is slow-wave enhancement?",
+            "answer": "<p>Slow-wave enhancement is a technique that uses precisely timed sound (soft pink noise) to nudge your brain waves into their most restorative rhythm. This the enhances the quality of your sleep without waking you up.</p>"
+          }
+        },
+        "faq_category_nHNKr8": {
+          "type": "faq-category",
+          "settings": {
+            "headline": "Care & Cleaning"
+          }
+        },
+        "faq_item_TTKKnd": {
+          "type": "faq-item",
+          "settings": {
+            "question": "How do I clean my earbuds and sleeves?",
+            "answer": "<p>Use a cloth dampened with bottled water to gently clean the surface. Let everything dry completely before using again. Clean weekly for best performance.</p>"
+          }
+        },
+        "faq_item_Uh7JHe": {
+          "type": "faq-item",
+          "settings": {
+            "question": "How do I replace my wings and/or tips?",
+            "answer": "<p>Smartbuds' wings and tips require regular replacement to continue collecting brain data. Always handle them gently and even if you're only swapping out wings, you’ll need to take the tip off first.<br/><br/><strong>Step 1:</strong> Remove the tip. Hold the earbud firmly in one hand. With the other hand, pinch the silicone tip near its base and pull it straight off using a slow, steady motion. Don’t twist or yank—these components are delicate and house important sensors.<br/><br/><strong>Step 2:</strong> Remove the wing. Gently peel the wing away from the body of the earbud, starting at one edge and working around. It should come off with light, even pressure—no need to force it.<br/><br/><strong>Step 3:</strong> Attach the new wing. Align the new wing so that the cutout fits neatly around the base of the earbud. Stretch the wing gently into place and press it down so it sits flush and snug against the earbud.<br/><br/><strong>Step 4:</strong> Attach the new tip.  Align the new tip with the nozzle of the earbud. Press it on firmly until it feels secure—you may hear or feel a soft click when it’s in place.</p>"
+          }
+        },
+        "faq_item_JPURrz": {
+          "type": "faq-item",
+          "settings": {
+            "question": "Are Smartbuds waterproof?",
+            "answer": "<p>No. Avoid rain, heavy sweat, and any moisture exposure. Do not submerge them in water or wear them in the shower.</p>"
+          }
+        },
+        "faq_category_wEB3GU": {
+          "type": "faq-category",
+          "settings": {
+            "headline": "Apps & Features"
+          }
+        },
+        "faq_item_V9JX6H": {
+          "type": "faq-item",
+          "settings": {
+            "question": "What is sleep routine?",
+            "answer": "<p>Your sleep routine is the window when you aim to be asleep—from your usual bedtime to your usual wake-up time. Setting it helps us customize your experience, like reminding you to charge your Smartbuds before bed. It doesn’t set an alarm or prevent you from starting a sleep session at a different time. Many users also find it helpful for setting sleep goals and keeping a consistent sleep schedule.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_category_NA8bV6",
+        "faq_item_BYJqAq",
+        "faq_item_E9Y3EX",
+        "faq_item_BCL3zr",
+        "faq_item_rk6F3C",
+        "faq_item_ggyKwH",
+        "faq_category_KtUzyF",
+        "faq_item_PHMQ9Q",
+        "faq_item_pMCRLe",
+        "faq_item_Tkrj9a",
+        "faq_item_LnkeBV",
+        "faq_category_jy6AHk",
+        "faq_item_c3GB7n",
+        "faq_item_akQ4tq",
+        "faq_category_nHNKr8",
+        "faq_item_TTKKnd",
+        "faq_item_Uh7JHe",
+        "faq_item_JPURrz",
+        "faq_category_wEB3GU",
+        "faq_item_V9JX6H"
+      ],
+      "name": "NS FAQs",
+      "settings": {
+        "headline_1": "Answers to",
+        "headline_2": "important questions",
+        "note": "<p>Submit a question or concern through<a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\"> this form</a>  <br/>Contact our customer support line: 888-898-8068.</p>"
+      }
     }
   },
   "order": [
@@ -238,6 +410,7 @@
     "ns_home_features_slideshow_dtJiCH",
     "ns_home_carousel_ik68fD",
     "ns_logos_marquee_ffVbJF",
-    "ns_carousel_images_9gmtWh"
+    "ns_carousel_images_9gmtWh",
+    "ns_faqs_7TgaXD"
   ]
 }
