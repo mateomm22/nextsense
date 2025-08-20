@@ -3,8 +3,20 @@ const lenis = new Lenis({
 	autoRaf: true,
 });
 
-const { animate, scroll, stagger } = Motion;
+const { animate, inView, scroll, stagger } = Motion;
 
+/** Default Fade In Effect */
+inView("[data-fade-in]", (element) => {
+	animate(element, { filter: ['blur(15px)', 'blur(0)'] }, { duration: 1 })
+
+	return (leaveInfo) => animate(element, { filter: ['blur(0)', 'blur(15px)'] })
+});
+
+
+
+/**
+ * Hero Animation
+ */
 const scrollWrapper = document.querySelector(".js-hero-scroll");
 const text = document.querySelector(".js-hero-scroll h1");
 const hand = document.querySelector(".js-hand");
@@ -107,7 +119,7 @@ scroll(animate(problemTl), {
 
 scroll(animate(problemEarbudsTl), {
 	target: homeProblemWrapperSection2,
-	offset: ["10% start", "75% start"]
+	offset: ["end 80%", "end 50%"]
 })
 
 
@@ -199,19 +211,6 @@ scroll(animate(backgroundsTl), {
 	offset: ['start start', 'end end']
 })
 
-// "Hide" section after passing by scrolling
-// scroll(progress => {
-// 	if (progress >= 0 && progress < 0.01) {
-// 		// slideshowHeadline.style.position = 'fixed';
-// 		slideshowBg.style.position = 'fixed';
-// 	} else {
-// 		// slideshowHeadline.style.position = 'absolute';
-// 		slideshowBg.style.position = 'absolute';
-// 	}
-// }, {
-// 	target: homeSlideshowWrapper,
-// 	offset: ['end 5px', 'end -5px']
-// })
 
 // Animate each section entry and leave
 const allSlideshowFeatures = document.querySelectorAll('.js-single-home-feature');
@@ -253,12 +252,12 @@ allSlideshowFeatures.forEach((slide, idx) => {
 	if (idx === 0) {
 		scroll(animate(enterSlideTl), {
 			target: slide,
-			offset: ['10% start', '30% start']
+			offset: ['10% start', '40% start']
 		})
 	} else {
 		scroll(animate(enterSlideTl), {
 			target: slide,
-			offset: ['start start', '20% start']
+			offset: ['start start', '30% start']
 		})
 	}
 });

@@ -49,12 +49,30 @@
             "headline": "Intelligent relaxation experience",
             "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget odio ipsum. Praesent egestas dui id velit imperdiet aliquet.</p>"
           }
+        },
+        "card_eJdJg4": {
+          "type": "card",
+          "settings": {
+            "bg_image": "shopify://shop_images/3203ef5de4df5b7d06e91ca7f5059a051f156992.webp",
+            "headline": "Sleep-sync audio",
+            "description": "<p>Smartbuds automatically pause audio when sensors detect that you're asleep — so you never miss a chapter of your audiobook or run down your battery.</p>"
+          }
+        },
+        "card_bFfnfi": {
+          "type": "card",
+          "settings": {
+            "bg_image": "shopify://shop_images/98a04cd537c382d1e924b73995448cc31c476272.webp",
+            "headline": "Premium earbuds for everyday use",
+            "description": "<p>With an integrated microphone and high-quality audio drivers, Smartbuds are perfect for music, podcasts, calls, and more.</p>"
+          }
         }
       },
       "block_order": [
         "card_kVhWhz",
         "card_ezJXi3",
-        "card_Dyy3aK"
+        "card_Dyy3aK",
+        "card_eJdJg4",
+        "card_bFfnfi"
       ],
       "name": "NS Prob-Solution",
       "settings": {
@@ -73,7 +91,7 @@
         "home_feature_wLte9V": {
           "type": "home-feature",
           "settings": {
-            "bg_image": "shopify://shop_images/1172d60c0d6f33c0926f2b9e8aafabf5cd13c792.webp",
+            "bg_image": "shopify://shop_images/focus_lifestyle_2.webp",
             "eyebrow": "Sleep",
             "coming_soon": false,
             "headline": "Get more restorative sleep",
@@ -87,7 +105,7 @@
             "bg_image": "shopify://shop_images/04a7cfac1194d7b3d8be57b486cb34eee37aebeb.webp",
             "eyebrow": "Focus",
             "coming_soon": true,
-            "headline": "Stay in flow longer",
+            "headline": "Get focused. And stay there.",
             "description": "<p>When your mind starts to drift, subtle brain-responsive audio shifts nudge you back into a focused state — helping you concentrate without distraction.</p>",
             "image": "shopify://shop_images/focus-graph.webp"
           }
@@ -99,7 +117,7 @@
             "eyebrow": "Relax",
             "coming_soon": true,
             "headline": "Unwind faster",
-            "description": "<p>Guided by your brain and body signals, Smartbuds create a personalized audio environment that gently helps you relax — no training required.</p>",
+            "description": "<p>Guided by your brain and body signals, Smartbuds create a personalized audio environment that gently helps you relax.</p>",
             "image": "shopify://shop_images/relax-graph.webp"
           }
         }

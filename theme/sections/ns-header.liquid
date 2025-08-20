@@ -86,11 +86,6 @@
     endcapture
   endif
 
-  assign bottom_row_blocks = ''
-
-  if section.settings.menu_row == 'bottom'
-    assign bottom_row_blocks = bottom_row_blocks | append: 'menu,'
-  endif
 
   if section.settings.search_style != 'none'
     if section.settings.search_row == 'bottom'
@@ -102,30 +97,6 @@
     if section.settings.localization_row == 'bottom'
       assign bottom_row_blocks = bottom_row_blocks | append: 'localization,'
     endif
-  endif
-
-  assign bottom_row_blocks = bottom_row_blocks | split: ',' | compact
-
-  if section.settings.section_height == 'compact'
-    assign header_height_class = ' header--compact'
-  endif
-
-  if bottom_row_blocks.size > 0 and section.settings.color_scheme_top.settings.background.rgb == section.settings.color_scheme_bottom.settings.background.rgb and section.settings.divider_width == 0
-    assign collapse_header_paddings_class = 'header--collapse-row-paddings'
-  endif
-
-  assign class = 'header'
-
-  if section.settings.color_scheme_top.settings.background.alpha != 1
-    assign class = class | append: ' ' | append: 'header--inherit-color-scheme-on-menu-open'
-  endif
-
-  if header_height_class
-    assign class = class | append: ' ' | append: header_height_class
-  endif
-
-  if collapse_header_paddings_class
-    assign class = class | append: ' ' | append: collapse_header_paddings_class
   endif
 %}
 
@@ -143,7 +114,7 @@
 
 <header-component
   id="header-component"
-  class="{{ class }}"
+  class="header"
   {% if transparent %}
     transparent="{{ transparent }}"
   {% endif %}
@@ -153,74 +124,19 @@
   data-skip-node-update
   data-scroll-direction="none"
 >
-  {% for row in rows %}
-    {% liquid
-      assign scheme = 'color_scheme_' | append: row
-      assign class = 'header__row header__row--[row] color-[row_scheme] section section--full-width-margin section--[section-width]' | replace: '[row]', row | replace: '[row_scheme]', section.settings[scheme] | replace: '[section-width]', section.settings.section_width
-
-      case row
-        when 'top'
-          assign first = mobile_menu
-
-          if bottom_row_blocks.size > 0 and section.settings.divider_size == 'page-width'
-            assign class = class | append: ' divider--page-width'
-          endif
-
-          if bottom_row_blocks.size > 0
-            assign border_bottom_setting_id = 'divider_width'
-          else
-            assign border_bottom_setting_id = 'border_width'
-          endif
-        when 'bottom'
-          assign first = ''
-          assign class = class | append: ' mobile:hidden'
-
-          assign border_bottom_setting_id = 'border_width'
-      endcase
-
-      assign style = '--border-bottom-width: [width]px; ' | replace: '[width]', section.settings[border_bottom_setting_id]
-
-      if row == 'top'
-        assign style = style | append: '--border-bottom-width-mobile: [width]px; ' | replace: '[width]', section.settings.border_width
-      endif
-    %}
-
-    {% capture content %}
-      {% render 'header-row',
-        row: row,
-        order: order,
-        settings: section.settings,
-        first: first,
-        logo: logo,
-        menu: menu,
-        actions: actions,
-        localization: localization_markup,
-        search: search,
-        mobile_search: mobile_search
-      %}
-    {% endcapture %}
-
-    {% assign content = content | strip %}
-    {% if content != blank %}
-      <div
-        class="{{ class | strip }}"
-        ref="headerRowTop"
-        {%- if style != blank -%}
-          style="{{ style | strip }}"
-        {%- endif -%}
-      >
-        <div class="header__columns spacing-style">
-          {{ content }}
-        </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-
-  {% if navigation_bar != blank %}
-    <div class="header__row header__row--mobile desktop:hidden color-{{ section.settings.color_scheme_bottom }}">
-      {{ navigation_bar }}
-    </div>
-  {% endif %}
+  <div class="header__logo">
+    {{ logo }}
+  </div>
+  <div class="header__menu">
+    {{ menu }}
+  </div>
+  <div class="header__actions">
+    {{ actions }}
+  </div>
+  <div class="header__menu-mobile">
+    {{ mobile_menu }}
+    {{ navigation_bar }}
+  </div>
 </header-component>
 
 <script
@@ -234,70 +150,6 @@
   "tag": "header",
   "class": "header-section",
   "settings": [
-    {
-      "type": "header",
-      "content": "t:content.logo"
-    },
-    {
-      "type": "select",
-      "id": "logo_position",
-      "label": "t:settings.position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:options.left"
-        },
-        {
-          "value": "center",
-          "label": "t:options.center"
-        },
-        {
-          "value": "right",
-          "label": "t:options.right"
-        }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "header",
-      "content": "t:content.menu"
-    },
-    {
-      "type": "select",
-      "id": "menu_position",
-      "label": "t:settings.position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:options.left"
-        },
-        {
-          "value": "center",
-          "label": "t:options.center"
-        },
-        {
-          "value": "right",
-          "label": "t:options.right"
-        }
-      ],
-      "default": "left"
-    },
-    {
-      "type": "select",
-      "id": "menu_row",
-      "label": "t:settings.row",
-      "options": [
-        {
-          "value": "top",
-          "label": "t:options.top"
-        },
-        {
-          "value": "bottom",
-          "label": "t:options.bottom"
-        }
-      ],
-      "default": "top"
-    },
     {
       "type": "header",
       "content": "t:content.customer_account"
@@ -461,123 +313,7 @@
       ],
       "default": "top",
       "visible_if": "{{ section.settings.show_country or section.settings.show_language }}"
-    },
-    {
-      "type": "header",
-      "content": "t:content.appearance"
-    },
-    {
-      "type": "select",
-      "id": "section_width",
-      "label": "t:settings.width",
-      "options": [
-        {
-          "value": "page-width",
-          "label": "t:options.page"
-        },
-        {
-          "value": "full-width",
-          "label": "t:options.full"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "section_height",
-      "label": "t:settings.height",
-      "options": [
-        {
-          "value": "compact",
-          "label": "t:options.compact"
-        },
-        {
-          "value": "standard",
-          "label": "t:options.standard"
-        }
-      ],
-      "default": "standard"
-    },
-    {
-      "type": "select",
-      "id": "enable_sticky_header",
-      "label": "t:settings.sticky_header",
-      "options": [
-        {
-          "value": "always",
-          "label": "t:options.always"
-        },
-        {
-          "value": "scroll-up",
-          "label": "t:options.on_scroll_up"
-        },
-        {
-          "value": "never",
-          "label": "t:options.never"
-        }
-      ],
-      "default": "always"
-    },
-    {
-      "type": "range",
-      "id": "divider_width",
-      "label": "t:settings.divider_thickness",
-      "min": 0,
-      "max": 5,
-      "step": 0.5,
-      "unit": "px",
-      "default": 0,
-      "visible_if": "{{ section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
-    },
-    {
-      "type": "select",
-      "id": "divider_size",
-      "label": "t:settings.divider_width",
-      "options": [
-        {
-          "value": "page-width",
-          "label": "t:options.page"
-        },
-        {
-          "value": "full-width",
-          "label": "t:options.full"
-        }
-      ],
-      "visible_if": "{{ section.settings.divider_width > 0 and section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
-    },
-    {
-      "type": "range",
-      "id": "border_width",
-      "label": "t:settings.border_width",
-      "min": 0,
-      "max": 5,
-      "step": 0.5,
-      "unit": "px",
-      "default": 0
-    },
-    {
-      "type": "header",
-      "content": "t:content.colors"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme_top",
-      "label": "t:settings.default",
-      "default": "primary"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme_bottom",
-      "label": "t:settings.bottom_row",
-      "default": "primary",
-      "visible_if": "{{ section.settings.menu_row == 'bottom' or section.settings.localization_row == 'bottom' or section.settings.search_row == 'bottom' }}"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme_transparent",
-      "label": "t:settings.inverse",
-      "default": "primary",
-      "visible_if": "{{ section.settings.enable_transparent_header_home or section.settings.enable_transparent_header_product or section.settings.enable_transparent_header_collection }}"
-    },
+    }
   ],
   "presets": []
 }

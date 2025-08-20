@@ -13,6 +13,9 @@
       margin-bottom 0.5em
       font-serif()
 
+    .text--xl
+      font-weight 300
+
     .text
       max-width 500px
       margin: 0 auto
@@ -40,12 +43,18 @@
 
     .earbud--l
       bottom 40%
-      left 40%
+      left 20%
+
+      +mq(768)
+        left 40%
 
     .earbud--r
       z-index -1
       top 60%
-      left 55%
+      left 45%
+
+      +mq(768)
+        left 55%
 
 
   .section--carousel

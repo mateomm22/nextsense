@@ -1,0 +1,35 @@
+.header-section
+  position fixed
+  width 100%
+  z-index 3
+  padding var(--grid-margin) var(--container-padding)
+
+  .header
+    display grid
+    border-radius 100px
+    background-color rgba($white, 0.4)
+    backdrop-filter blur(10px)
+    padding 16px 30px
+    grid-template-columns 1fr 2fr 1fr
+
+
+.header__logo
+  .header-logo
+    justify-content flex-start
+
+
+.header__menu
+  .menu-list
+    justify-content center
+    list-style none
+    gap 0 24px
+    color $white
+    +mq(1400)
+      gap 0 64px
+
+.header__drawer
+  display flex
+  min-height 60px
+  align-items center
+  +mq(768)
+    display none

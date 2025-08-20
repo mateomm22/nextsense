@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/nextsense-logo.svg",
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n5",
     "type_heading_font": "inter_n7",
@@ -113,6 +114,68 @@
           "menu_headline": "Legal",
           "legal_menu": "legal-menu",
           "copyright": "© 2025 NextSense. | All Rights Reserved"
+        }
+      },
+      "ns-header": {
+        "type": "ns-header",
+        "blocks": {
+          "header-logo": {
+            "type": "_header-logo",
+            "static": true,
+            "settings": {
+              "hide_logo_on_home_page": false,
+              "custom_height": 20,
+              "custom_height_mobile": 20,
+              "padding-block-start": 0,
+              "padding-block-end": 0,
+              "padding-inline-start": 0,
+              "padding-inline-end": 0
+            },
+            "blocks": {}
+          },
+          "header-menu": {
+            "type": "_header-menu",
+            "static": true,
+            "settings": {
+              "menu": "main-menu",
+              "menu_style": "collection_images",
+              "featured_products_aspect_ratio": "4 / 5",
+              "featured_collections_aspect_ratio": "16 / 9",
+              "image_border_radius": 0,
+              "product_title_case": "default",
+              "collection_title_case": "default",
+              "color_scheme": "",
+              "menu_font_style": "inverse",
+              "type_font_primary_link": "heading",
+              "type_font_primary_size": "1rem",
+              "type_case_primary_link": "none",
+              "type_font_secondary_link": "subheading",
+              "type_case_secondary_link": "none",
+              "type_font_tertiary_link": "body",
+              "type_case_tertiary_link": "none",
+              "navigation_bar": false,
+              "color_scheme_navigation_bar": "",
+              "drawer_accordion": false,
+              "drawer_accordion_expand_first": false,
+              "drawer_dividers": false
+            },
+            "blocks": {}
+          }
+        },
+        "settings": {
+          "logo_position": "left",
+          "menu_position": "right",
+          "menu_row": "top",
+          "show_search": false,
+          "search_position": "right",
+          "search_row": "top",
+          "show_country": false,
+          "country_selector_style": true,
+          "show_language": false,
+          "localization_font": "heading",
+          "localization_font_size": "1rem",
+          "localization_position": "right",
+          "localization_row": "top"
         }
       }
     },
