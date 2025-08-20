@@ -268,7 +268,6 @@ allSlideshowFeatures.forEach((slide, idx) => {
  * Homepage carousel
  */
 const homeCarousel = new Swiper('.js-home-carousel', {
-	// Optional parameters
 	loop: true,
 	slidesPerView: 1,
 	centeredSlides: true,
@@ -288,10 +287,9 @@ const homeCarousel = new Swiper('.js-home-carousel', {
 
 
 /**
- * Homepage carousel
+ * Homepage carousel images
  */
 const carouselImages = new Swiper('.js-carousel-images', {
-	// Optional parameters
 	loop: true,
 	spaceBetween: 1,
 	centerInsufficientSlides: true,
@@ -303,15 +301,12 @@ const carouselImages = new Swiper('.js-carousel-images', {
 	},
 	// Responsive breakpoints
 	breakpoints: {
-		// when window width is >= 450px
 		450: {
 			slidesPerView: 3,
 		},
-		// when window width is >= 768px
 		768: {
 			slidesPerView: 4,
 		},
-		// when window width is >= 992px
 		992: {
 			slidesPerView: 5,
 		}

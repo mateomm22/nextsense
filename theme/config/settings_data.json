@@ -75,6 +75,48 @@
     "variant_button_border_width": 1,
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
+    "sections": {
+      "ns-footer": {
+        "type": "ns-footer",
+        "blocks": {
+          "menu_NKPTRH": {
+            "type": "menu",
+            "settings": {
+              "menu_headline": "Company",
+              "menu": "footer",
+              "new_tab": false
+            }
+          },
+          "menu_Hgian4": {
+            "type": "menu",
+            "settings": {
+              "menu_headline": "Research",
+              "menu": "footer-menu-2",
+              "new_tab": false
+            }
+          },
+          "menu_9wzTti": {
+            "type": "menu",
+            "settings": {
+              "menu_headline": "Social",
+              "menu": "footer-social",
+              "new_tab": false
+            }
+          }
+        },
+        "block_order": [
+          "menu_NKPTRH",
+          "menu_Hgian4",
+          "menu_9wzTti"
+        ],
+        "settings": {
+          "menu_headline": "Legal",
+          "legal_menu": "legal-menu",
+          "copyright": "© 2025 NextSense. | All Rights Reserved"
+        }
+      }
+    },
+    "content_for_index": [],
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -122,7 +164,7 @@
           "foreground": "#000000cf",
           "primary": "#000000cf",
           "primary_hover": "#ffffff",
-          "border": "#DFDFDF",
+          "border": "#dfdfdf",
           "shadow": "#000000",
           "primary_button_background": "#000000",
           "primary_button_text": "#ffffff",

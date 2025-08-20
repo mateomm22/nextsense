@@ -1,0 +1,83 @@
+footer
+  background-color $black
+  color $berry
+  padding-block 30px
+
+  .footer__content
+    display grid
+    grid-template-columns 1fr
+    gap var(--container-padding) 0
+
+    +mq(768)
+      grid-template-columns 1fr 1fr
+    +mq(992)
+      gap 0
+      grid-template-columns 3fr 2fr 1fr
+
+  .footer__headline
+    @extends .text
+    font-weight 400
+
+
+.footer__main-menu
+  display grid
+  grid-template-columns repeat(3, 1fr)
+
+
+.footer__single-menu
+  ul
+    list-style none
+
+    li
+      margin-bottom 0.5em
+
+    a
+      &:hover
+        text-decoration underline
+
+
+.footer__form
+  border-block 1px solid rgba($lavender, 0.5)
+  width calc(100% + (var(--container-padding) - var(--grid-margin)) * 2)
+  translate calc((var(--grid-margin) * 2) * -1) 0
+  padding-block var(--container-padding)
+  padding-inline calc(var(--container-padding) - var(--grid-margin))
+
+  +mq(768)
+    border-block 0
+    width 100%
+    translate 0 0
+    padding-block 0
+    padding-inline var(--grid-margin)
+
+  &::after
+    content ''
+    position absolute
+    top -30px
+    left 0
+    width 100%
+    pointer-events none
+
+    +mq(768)
+      height calc(100% + var(--grid-margin))
+      border-left 1px solid rgba($lavender, 0.5)
+    +mq(992)
+      border-inline 1px solid rgba($lavender, 0.5)
+
+  .text
+    color $periwinckle
+
+.footer__legal
+  +mq(992)
+    padding-left var(--grid-margin)
+
+
+.footer__logo
+  padding-top calc(var(--container-padding) * 3)
+  +mq(768)
+    padding-top calc(var(--container-padding) * 2)
+
+  svg
+    width 100%
+    height auto
+    fill $berry

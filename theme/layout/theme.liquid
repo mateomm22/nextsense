@@ -64,10 +64,9 @@
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
-    {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
-    <div id="header-group">
-      {% comment %} {% sections 'header-group' %} {% endcomment %}
-    </div>
+    {% comment %} {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %} {% endcomment %}
+
+    {% comment %} {% section 'ns-header' %} {% endcomment %}
 
     <script
       src="{{ 'critical.js' | asset_url }}"
@@ -87,7 +86,7 @@
       {{ content_for_layout }}
     </main>
 
-    {% comment %} {% sections 'footer-group' %} {% endcomment %}
+    {% section 'ns-footer' %}
 
     {% render 'search-modal' %}
 
